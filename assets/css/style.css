@@ -1,9 +1,10 @@
+/* Default styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+/* Refer to whole page */
 body {
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
@@ -12,14 +13,14 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+/* Title */
 h1 {
   text-align: center;
   bottom: 20px;
   font-size: 20px;
   text-decoration: underline;
 }
-
+/* Main div container */
 .mainContent {
   background-color: pink;
   border: 2px solid black;
@@ -28,7 +29,7 @@ h1 {
   position: relative;
   top: 10px;
 }
-
+/* Input text field  */
 input[type="text"] {
   width: 220px;
   margin-top: 20px;
@@ -36,12 +37,12 @@ input[type="text"] {
   padding: 5px;
   border: 2px solid black;
 }
-
+/* Date field */
 input[type="date"] {
   border: 2px solid black;
   width: 106px;
 }
-
+/* Add button */
 #addTask {
   position: relative;
   left: 360px;
@@ -55,7 +56,7 @@ input[type="date"] {
   cursor: pointer;
   border: 2px solid black;
 }
-
+/* Text styling for input field when text appear */
 .task {
   position: relative;
   margin: 20px 30px;
@@ -63,12 +64,13 @@ input[type="date"] {
   padding-right: 100px;
   word-wrap: break-word;
 }
-
+/* Button Container */
 .btnWidget {
     display: block;
   position: absolute;
 }
 
+/* Delete Button */
 .delete-btn {
   position: absolute;
   left: 365px;
@@ -79,6 +81,7 @@ input[type="date"] {
   cursor: pointer;
 }
 
+/* Edit Button */
 .edit-btn {
   position: absolute;
   right: 20px;
@@ -88,7 +91,7 @@ input[type="date"] {
   border: 2px solid black;
   cursor: pointer;
 }
-
+/* Complete Button */
 .complete-Btn {
   position: absolute;
   padding: 5px 10px;
@@ -100,6 +103,7 @@ input[type="date"] {
   cursor: pointer;
 }
 
+/* Strikethrough input field when complete button is click */
 .strikethrough {
   text-decoration: line-through;
   color: deeppink;
