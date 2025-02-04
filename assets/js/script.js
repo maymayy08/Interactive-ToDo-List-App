@@ -76,8 +76,9 @@ function add() {
   deleteTaskEl.addEventListener("click", handleDelete);
 // handle function from event listner then trigger it, when user click delete. it remove the input from the list and then prompt a message remindar
   function handleDelete() {
-    if (newParagraph) {
+    if (newParagraph, dateInput) {
       todoListEl.removeChild(newParagraph);
+      todoListEl.removeChild(dateInput);
       alert("Task deleted");
       return;
     }
