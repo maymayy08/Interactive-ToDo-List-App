@@ -46,6 +46,26 @@ function add() {
   todoListEl.appendChild(newParagraph);
 //   clear user input 
   inputTaskEl.value = "";
+
+  // Re-assign variable to new element 
+  var dueDate = dueDate;  
+
+  // Create a new Date object from the string
+  var dateObj = new Date(dueDate);
+  
+  // Format the date in the en-GB locale (DD/MM/YYYY)
+  var formattedDate = dateObj.toLocaleDateString('en-GB');
+  
+  // Create a new <span> element to display the due date
+  var dateInput = document.createElement("span");
+  dateInput.classList.add("dueDate");
+  
+  // Set the formatted date as the text content of the <span>
+  dateInput.textContent = formattedDate;
+  
+  // Append the date to the todo list element
+  todoListEl.appendChild(dateInput);
+
 // create delete button 
   var deleteTaskEl = document.createElement("button");
 //   create delete class 
@@ -118,10 +138,11 @@ function add() {
   completeTaskEl.addEventListener("click", function() {
     // create a class for styling and then triggle the input field, when user click on complete, the input field text strikethrough 
     newParagraph.classList.toggle("strikethrough");
+    dateInput.classList.toggle("strikethrough")
   });
 
 
-  // Append Edit and Delete buttons to the task
+  // Append Edit, Complete and Delete buttons to the task
   newParagraph.appendChild(editTaskEl);
   newParagraph.appendChild(deleteTaskEl);
   newParagraph.appendChild(completeTaskEl);

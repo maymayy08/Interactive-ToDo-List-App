@@ -57,10 +57,10 @@ input[type="date"] {
   border: 2px solid black;
 }
 /* Text styling for input field when text appear */
-.task {
+.task, .dueDate {
   position: relative;
-  margin: 20px 30px;
-  font-size: 15px;
+  margin: 10px 30px;
+  font-size: 13px;
   padding-right: 100px;
   word-wrap: break-word;
 }
