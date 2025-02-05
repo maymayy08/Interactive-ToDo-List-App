@@ -137,7 +137,7 @@ function add() {
 
 //   create event listner 
   completeTaskEl.addEventListener("click", function() {
-    // create a class for styling and then triggle the input field, when user click on complete, the input field text strikethrough 
+    // create a class for styling and then triggle the input/date field, when user click on complete, the input/date field text strikethrough 
     newParagraph.classList.toggle("strikethrough");
     dateInput.classList.toggle("strikethrough")
   });
