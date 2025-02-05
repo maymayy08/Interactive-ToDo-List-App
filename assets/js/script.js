@@ -71,7 +71,7 @@ function add() {
 //   create delete class 
   deleteTaskEl.classList.add("delete-btn");
 //   Give element a name 
-  deleteTaskEl.textContent = "🗑️";
+  deleteTaskEl.textContent = "❌";
 // create a event listner and create a function inside 
   deleteTaskEl.addEventListener("click", handleDelete);
 // handle function from event listner then trigger it, when user click delete. it remove the input from the list and then prompt a message remindar
@@ -93,7 +93,13 @@ function add() {
   // Event listener for the Edit button
   editTaskEl.addEventListener("click", function () {
     var isEditing = newParagraph.classList.contains("editing");
+    var iseditingComplete = false;
 
+    // Create function alert to prevent user to click the complete button again 
+    if(isCompleted) {
+      alert("Sorry, You cannot edit after this task been marked complete");
+      return;
+    }
     if (isEditing) {
       // Save the new task text when in editing mode
       var updatedText = newParagraph.querySelector("input").value.trim();
@@ -105,8 +111,11 @@ function add() {
       // Re-add the Edit and Delete buttons after saving
       newParagraph.appendChild(editTaskEl);
       newParagraph.appendChild(deleteTaskEl);
+      newParagraph.appendChild(completeTaskEl);
 
-      editTaskEl.textContent = "📝"; // Change button text back to "Edit"
+      editTaskEl.textContent = "📝";
+      // Return back false and can only edit once and prevent user to edit again
+      iseditingComplete = false;   
     } else {
       // Switch to editing mode by removing current buttons and adding the input
       newParagraph.classList.add("editing"); // Mark as editing mode
@@ -125,7 +134,9 @@ function add() {
       // Re-attach the buttons after switching to edit mode
       newParagraph.appendChild(editTaskEl);
       newParagraph.appendChild(deleteTaskEl);
+     
     }
+
   });
 
 // Create complete button
@@ -135,20 +146,28 @@ function add() {
 //   Assign a name for the button 
   completeTaskEl.textContent = "✅";
 
+  let isCompleted = false;
+
 //   create event listner 
   completeTaskEl.addEventListener("click", function() {
+    if(isCompleted) {
+      alert("Sorry, This task has already been mark as completed")
+      return;
+    }
     // create a class for styling and then triggle the input/date field, when user click on complete, the input/date field text strikethrough 
     newParagraph.classList.toggle("strikethrough");
-    dateInput.classList.toggle("strikethrough")
+    dateInput.classList.toggle("strikethrough");
+    // Create variable of alert to return true when complete button click once and cannot undone 
+    isCompleted = true;
+    alert("Woohoo! Task Completed!");
+    return;
   });
 
-
   // Append Edit, Complete and Delete buttons to the task
-  newParagraph.appendChild(editTaskEl);
-  newParagraph.appendChild(deleteTaskEl);
-  newParagraph.appendChild(completeTaskEl);
+   newParagraph.appendChild(editTaskEl);
+   newParagraph.appendChild(deleteTaskEl);
+   newParagraph.appendChild(completeTaskEl);
 
-  
   // Clear the input fields after adding the task
   inputTaskEl.value = "";
   dateEl.value = "";

@@ -103,6 +103,8 @@ input[type="date"] {
   cursor: pointer;
 }
 
+
+
 /* Strikethrough input field when complete button is click */
 .strikethrough {
   text-decoration: line-through;
