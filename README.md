@@ -5,9 +5,10 @@ A Simple and interactive To do list that is built in using HTML, CSS, and JavaSc
 
 **🚀 Features**
 
-  Add new tasks with chosen date selected 
+  Add new tasks with chosen due date selected 
   Task status of completed, allow user to mark their task easily
   Edit or delete tasks 
+  Shown due date status under task
   Responsive design for mobile and desktop
 
 **🛠️ Technologies Used**
