@@ -12,6 +12,8 @@ A Simple and interactive To do list that is built in using HTML, CSS, and JavaSc
   Edit or delete tasks 
   <br>
   Show due date status under each task created
+  <br> 
+  Alert user to prevent complete/edit buttons reclick again 
   <br>
   Responsive design for mobile and desktop
 
