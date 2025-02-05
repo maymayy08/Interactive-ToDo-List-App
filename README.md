@@ -11,7 +11,7 @@ A Simple and interactive To do list that is built in using HTML, CSS, and JavaSc
   <br>
   Edit or delete tasks 
   <br>
-  Shown due date status under each task created
+  Show due date status under each task created
   <br>
   Responsive design for mobile and desktop
 
